@@ -24,12 +24,14 @@ $onscreen = '<table class="table" width="100%">
                 </thead> 
                 '; 
  foreach ($response_array as $resp){ 
-    $onscreen.='<tr> 
+    if ($resp['i_sell']>2000){
+        $onscreen.='<tr> 
                     <td>'.$resp['i_code'].'</td> 
                     <td>'.$resp['i_name'].'</td> 
                     <td>'.$resp['i_sell'].'</td> 
                     <td>'.$resp['i_qty'].'</td>
                  </tr>'; 
+    }
 } 
 $onscreen.='</table>';                                 
 echo $onscreen; 
